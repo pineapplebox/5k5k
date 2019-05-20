@@ -1,38 +1,120 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="icon" type="image/png" href="https://i.lensdump.com/i/WrLlHP.png">
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>5k5k - Minecraft Anarchy server</title>
-        <meta http-equiv="content-language" content="en">
-        <style type="text/css">
-			* {padding: 0; margin: 0;}
-            body {height: 100%; background: #FFF url("https://assets.rockpapershotgun.com/images/2018/11/minecraft-2b2t-3.jpg") repeat; color: #fff; font-family: Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif; font-size: 16px;}
-			a {color: #698FB4; outline:none; text-decoration:none;}
-			a:hover {text-decoration: underline;}
-			h1 {color: #49E551; font-weight: 400;}
-			h2 {font-weight: 400; margin: 10px 0 40px;}
-			h3 {font-weight: normal; text-align: left; margin: 0 0 20px;}
-			.wrap {background: rgba(0, 0, 0, 0.4); width: 850px; height: 475px; text-align: center; padding: 80px 35px 10px; margin: 28px auto 0; overflow: hidden;}
-			.logo {display: inline-block; margin: 0 0 40px;}
-			ul {list-style: square; text-align: left; line-height: 26px; padding: 0 0 0 15px;}
-			p {font-size: 30px; font-style: italic;  color: #ffa500; margin: 20px 0 0;}
-        </style>
-    </head>
-    <body>
-            <div class="wrap">
-				<img src="https://i.imgur.com/r0fIiLb.png" border="0">
-				<h1>IP: 5k5k.ga</h1>
-				<h2>5k5k is an Anarchy Minecraft Server For 1.13.2!</h2>
-				<h3>There are no rules, and no restrictions. You may hack, cheat, lie, spam etc. The world is based on a 5,000 x 5,000 world border.</h3>
-				<ul>
-                    <li>Discord: <a>https://discord.gg/WkeNhXK</a></li>
-					<li>Creator: xXChristGamerXx</li>
-					<li>Server Version: 1.13.2</li>
-				</ul>
-				<p>Have a horrible time, you big gay!</p>
-                                <br />
-                                <h4 style="display: none;">.</h4>
-            </div>
-    </body>
-</html>		
+
+<head>
+    <link rel="icon" type="image/png" href="https://i.lensdump.com/i/WrLlHP.png">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>5k5k - Minecraft Anarchy server</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <meta http-equiv="content-language" content="en">
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        body {
+            height: 100%;
+            background-size: cover;
+            background: #FFF url("https://assets.rockpapershotgun.com/images/2018/11/minecraft-2b2t-3.jpg");
+            color: #fff;
+            font-family: Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
+            font-size: 16px;
+        }
+        
+        a {
+            color: #698FB4;
+            outline: none;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        h1 {
+            color: #49E551;
+            font-weight: 400;
+        }
+        
+        h2 {
+            font-weight: 400;
+            margin: 10px 0 40px;
+        }
+        
+        h3 {
+            font-weight: normal;
+            text-align: left;
+            margin: 0 0 20px;
+        }
+        
+        .wrap {
+            background: rgba(0, 0, 0, 0.4);
+            width: 850px;
+            height: 475px;
+            text-align: center;
+            padding: 30px 35px 35px;
+            margin: 68px auto 0;
+            overflow: hidden;
+        }
+        
+        .logo {
+            display: inline-block;
+            margin: 0 0 40px;
+        }
+        
+        ul {
+            list-style: square;
+            text-align: left;
+            line-height: 26px;
+            padding: 0 0 0 15px;
+        }
+        
+        p {
+            font-size: 30px;
+            font-style: italic;
+            color: #ffa500;
+            margin: 20px 0 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <img src="https://i.imgur.com/r0fIiLb.png" border="0">
+        <h1>IP: 5k5k.ga</h1>
+        <h2>5k5k is an Anarchy Minecraft Server For 1.13.2!</h2>
+        <h3>There are no rules, and no restrictions. You may hack, cheat, lie, spam etc. The world is based on a 5,000 x 5,000 world border.</h3>
+        <ul>
+            <li>Discord: <a>https://discord.gg/WkeNhXK</a></li>
+            <li>Creator: xXChristGamerXx</li>
+            <li>Server Version: 1.13.2</li>
+        </ul>
+        <p>Have a horrible time, you big gay!</p>
+        <br />
+        <h4 style="display: none;">.</h4>
+        <div class="server-status">
+            <center>
+                Online: <span class="server-online"></span>
+                <br /> Players: <span class="server-players"></span>
+            </center>
+        </div>
+        <script src="https://mcapi.us/scripts/minecraft.js"></script>
+        <script>
+            MinecraftAPI.getServerStatus('5k5k.ga', {
+                port: 25565 // optional, only if you need a custom port
+            }, function(err, status) {
+                if (err) {
+                    return document.querySelector('.server-status').innerHTML = 'Error loading status';
+                }
+
+                // you can change these to your own message!
+                document.querySelector('.server-online').innerHTML = status.online ? '<i class="fa fa-check"></i>' : '<i class="fa fa-close"></i>';
+                document.querySelector('.server-players').innerHTML = status.players.now + " / " + status.players.max;
+            });
+        </script>
+
+    </div>
+</body>
+
+</html>
